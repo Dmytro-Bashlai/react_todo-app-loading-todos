@@ -27,11 +27,11 @@ function request<T>(
   }
 
   // DON'T change the delay it is required for tests
-  return wait(100)
+  return wait(300)
     .then(() => fetch(BASE_URL + url, options))
     .then(response => {
       if (!response.ok) {
-        throw new Error();
+        throw new Error(`${response.status} ${response.statusText}`);
       }
 
       return response.json();
