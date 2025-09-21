@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { Todo } from '../../types/Todo';
-import { Filter } from '../../types/enums/Filter';
+import { Filter, FILTERS } from '../../types/enums/Filter';
 
 interface Props {
   todos: Todo[];
@@ -9,8 +9,6 @@ interface Props {
   onChangeActiveLink: (link: Filter) => void;
   onClearCompleted: () => void;
 }
-
-const FILTERS = [Filter.All, Filter.Active, Filter.Completed];
 
 export const Footer: React.FC<Props> = ({
   todos,
